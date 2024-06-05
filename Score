@@ -27,6 +27,6 @@ public class Score {
 			
 		
 	}
-
+  s.close();  // 關閉Scanner物件
  }
 }

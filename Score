@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Score {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	Scanner scn = new Scanner(System.in);
+	String name[] = new String[5];
+	for(int i=0;i<5;i++) {
+		
+		System.out.println("請輸入姓名？");
+		name[i] = scn.next();
+		System.out.println("請再輸入您的國語成績");
+		int sco1 =scn.nextInt(); 
+		System.out.println("請再輸入您的英文成績");
+		int sco2 =scn.nextInt(); 
+		System.out.println("請再輸入您的數學成績");
+		int sco3 =scn.nextInt(); 
+		System.out.println("請再輸入您的社會成績");
+		int sco4 =scn.nextInt(); 
+		System.out.println("請再輸入您的自然成績");
+		int sco5 =scn.nextInt(); 
+		int sum=sco1+sco2+sco3+sco4+sco5;
+		System.out.println("您的總分為: "+sum);
+		float ave=sum/5;
+		System.out.println("您的平均為: "+ave);
+			
+		
+	}
+
+ }
+}

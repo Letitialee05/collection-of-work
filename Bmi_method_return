@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Bmi_method_return {
+
+	static double bmi(double Hei,double Wei) {
+		 return (Wei/(Hei*Hei)*10000);
+		 
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		double Hei=0, Wei=0;
+		Scanner s=new Scanner(System.in);
+		System.out.println("請輸入身高");
+		Hei = s.nextDouble();
+		System.out.println("請輸入體重");
+		Wei = s.nextDouble();
+		double bmi = bmi(Hei,Wei);
+	System.out.println("Your Bmi is = " +bmi);
+		
+		
+		
+	s.close();	
+	}
+
+}

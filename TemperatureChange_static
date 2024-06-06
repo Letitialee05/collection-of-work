@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class TemperatureChange_static {
+
+	public static void main(String[] args) {
+		
+		Scanner s1=new Scanner(System.in);
+		System.out.println("請輸入要轉換的溫度值");
+		
+		double temp_value = s1.nextDouble();
+		temperatureChange(temp_value);
+		s1.close();	
+	}
+	
+	static void temperatureChange(double temp_value) {
+		
+		Scanner s=new Scanner(System.in);
+		
+		System.out.println("輸入選項A為攝氏轉換成華氏,輸入選項B為華氏轉換成攝氏");
+		String chose = s.next();
+		switch(chose)
+	      {
+	         case "A" :
+	            //System.out.println("攝氏轉換成華氏,請輸入溫度"); 
+	            //float temperature_F = s.nextFloat();
+	            double temperature_F = temp_value*9/5+32;
+	            System.out.println("華氏溫度為"+temperature_F);
+	            
+	            break;
+	         case "B" :
+	           // System.out.println("華氏轉換成攝氏,請輸入溫度");
+	            //float temperature_C = s.nextFloat();
+	            double temperature_C = (temp_value-32)*5/9;
+	            System.out.println("攝氏溫度為"+temperature_C); 
+	            break;
+	        
+	      }
+		s.close();	
+		}	
+		
+	}

@@ -2,8 +2,8 @@ class Stu_data
 {
 	static int class_num=101;
 	String name;
-	int stu_num,lucky_num;
-	double i;
+	int stu_num;
+	double lucky_num;
 		
 	Stu_data(String name,int stu_num){
 				
@@ -12,8 +12,8 @@ class Stu_data
 		
 		do
 		{ 
-			i=Math.random();
-			lucky_num=(int)(i*100);
+			lucky_num=Math.random();
+			lucky_num=(int)(lucky_num*100);
 		}
 		while(lucky_num==0);
 		
@@ -43,5 +43,4 @@ public class Stu_profile_1
 	}
 
 }
-
 

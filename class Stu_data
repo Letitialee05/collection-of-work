@@ -1,0 +1,51 @@
+class Stu_data
+{
+	static int class_num=101;
+	String name;
+	int stu_num,lucky_num;
+	double i;
+	
+	int Random_num()
+	{
+			do
+			{ 
+				i=Math.random();
+				lucky_num=(int)(i*100);
+			}
+			while(lucky_num==0);	
+			return lucky_num;
+	}
+	
+	Stu_data(String name,int stu_num){
+				
+		this.name = name;
+		this.stu_num = stu_num;
+		
+	}
+	
+	void show() 
+	{
+		this.lucky_num = Random_num();
+		System.out.println("班級：" + class_num + " 姓名：" + name + " 座號：" + stu_num + " 幸運號碼：" + lucky_num);
+	
+	}
+}
+public class Stu_profile_1
+{
+
+	public static void main(String[] args)
+	{
+		// TODO Auto-generated method stub
+		
+		Stu_data stu1 = new Stu_data("大雄",1);
+		stu1.show();
+
+		Stu_data stu2 = new Stu_data("靜香",2);
+		stu2.show();
+		
+		Stu_data stu3 = new Stu_data("安安",3);
+		stu3.show();
+	}
+
+}
+

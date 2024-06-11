@@ -4,28 +4,23 @@ class Stu_data
 	String name;
 	int stu_num,lucky_num;
 	double i;
-	
-	int Random_num()
-	{
-			do
-			{ 
-				i=Math.random();
-				lucky_num=(int)(i*100);
-			}
-			while(lucky_num==0);	
-			return lucky_num;
-	}
-	
+		
 	Stu_data(String name,int stu_num){
 				
 		this.name = name;
 		this.stu_num = stu_num;
 		
+		do
+		{ 
+			i=Math.random();
+			lucky_num=(int)(i*100);
+		}
+		while(lucky_num==0);
+		
 	}
 	
 	void show() 
 	{
-		this.lucky_num = Random_num();
 		System.out.println("班級：" + class_num + " 姓名：" + name + " 座號：" + stu_num + " 幸運號碼：" + lucky_num);
 	
 	}
@@ -48,4 +43,5 @@ public class Stu_profile_1
 	}
 
 }
+
 

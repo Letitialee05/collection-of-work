@@ -1,0 +1,40 @@
+class Pet_1{
+	String name,color;
+	int age;
+	double weight;
+	static String address="台北市大安區";
+	
+	Pet_1(String pn,int pa,double wei,String pc){
+		
+		name = pn;
+		age = pa;
+		weight = wei;
+		color = pc;
+		
+	}
+	
+	void show_Pet_1(){
+		
+		System.out.println("寵物名字: "+name+" 寵物年齡: "+age+"歲"+"  寵物體重: "+weight+"公斤"+" 寵物毛色: "+color+" 寵物地址: "+address);
+		
+	}
+	
+}
+
+
+public class Pet {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Pet_1 p1=new Pet_1("花花",8,2.5,"花紋"); 
+		Pet_1 p2=new Pet_1("毛毛",3,3.6,"棕色"); 
+		Pet_1 p3=new Pet_1("乖乖",10,4.2,"白色"); 
+		
+		p1.show_Pet_1();
+		p2.show_Pet_1();
+		p3.show_Pet_1();
+		
+		
+	}
+
+}

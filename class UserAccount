@@ -1,8 +1,8 @@
 class UserAccount 
 {
-   private int balance; // 帳戶餘額
+   private int balance,value; // 帳戶餘額
 
-	   void clearAccount() 
+	  public void clearAccount() 
 	   {
 	      balance = 0;
 	   } // 清空帳戶餘額的 "方法"
@@ -24,10 +24,17 @@ class UserAccount
 	   } // 提款的 "方法"
 	   
 
-	   int getBalance() 
+	   private int getBalance() 
 	   {
 	      return balance;
 	   } // 顯示目前餘額的 "方法"
+	   
+	   int Balance() 
+	   {
+		   value = getBalance();
+		   return value;
+	   } // getBalance是私有方法,所以不能在其他位置使用,此方式才能在其他地方使用
+	   
 	   
    
 }
@@ -40,21 +47,21 @@ public class Person {
       Apple.clearAccount(); // Apple 的帳戶餘額清空
       Android.clearAccount(); // Android 的帳戶餘額清空
       System.out.println("***** 清空帳戶餘額 *****  ");
-      System.out.println("Apple has " + Apple.getBalance() + " dollars."); // 顯示 Apple 目前的帳戶餘額
-      System.out.println("Android has " + Android.getBalance() + " dollars."); // 顯示 Android 目前的帳戶餘額
+      System.out.println("Apple has " + Apple.Balance() + " dollars."); // 顯示 Apple 目前的帳戶餘額
+      System.out.println("Android has " + Android.Balance() + " dollars."); // 顯示 Android 目前的帳戶餘額
       
       Apple.deposit(1500); // Apple 存1500 元
       Android.deposit(2200); // Android 存 2200 元
       System.out.println("***** 存款後餘額 *****  ");
-      System.out.println("Apple has " + Apple.getBalance() + " dollars."); // 顯示 Apple 目前的帳戶餘額
-      System.out.println("Android has " + Android.getBalance() + " dollars."); // 顯示 Android 目前的帳戶餘額
+      System.out.println("Apple has " + Apple.Balance() + " dollars."); // 顯示 Apple 目前的帳戶餘額
+      System.out.println("Android has " + Android.Balance() + " dollars."); // 顯示 Android 目前的帳戶餘額
   
       
       Apple.withdraw(3000); // Apple 提 3000 元
       Android.withdraw(200); // Android 提 200 元
       System.out.println("***** 提款後餘額 *****  ");
-      System.out.println("Apple has " + Apple.getBalance() + " dollars."); // 顯示 Apple 目前的帳戶餘額
-      System.out.println("Android has " + Android.getBalance() + " dollars."); // 顯示 Android 目前的帳戶餘額
+      System.out.println("Apple has " + Apple.Balance() + " dollars."); // 顯示 Apple 目前的帳戶餘額
+      System.out.println("Android has " + Android.Balance() + " dollars."); // 顯示 Android 目前的帳戶餘額
       
    }
 }

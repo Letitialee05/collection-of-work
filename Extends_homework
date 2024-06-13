@@ -1,0 +1,75 @@
+import java.util.Scanner;
+
+class Cost{
+	int price;
+	String name;
+	
+	public int getCost(){
+		
+		return price;	
+	}
+    
+}
+
+
+class Engine extends Cost {
+	Engine(int cc){
+    	
+		if(cc==1600) {
+			price=20000;
+		}
+		
+		if(cc==2000) {
+			price=25000;
+		}
+	
+	}
+}
+    
+
+
+class Aircond extends Cost {
+	Aircond(String name){	
+
+		if(name.equals("Auto")) {
+			price=12000;
+		}
+		
+		if(name.equals("Manual")){
+			price=10000;
+		}
+	}
+}
+
+
+class Sound extends Cost{
+	Sound(){
+	price=2000;
+	}
+}
+public class Extends_homework {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	    
+		Engine cc_1600 = new Engine(1600);
+		System.out.println("1600cc引擎金額為: "+cc_1600.getCost());
+		
+		Engine cc_2000 = new Engine(2000);
+		System.out.println("2000cc引擎金額為: "+cc_2000.getCost());
+		
+		
+		Aircond Auto = new Aircond("Auto");
+		System.out.println("Auto空調金額為: "+Auto.getCost());
+		
+		Aircond Manual = new Aircond("Manual");
+		Manual.price = 10000;
+		System.out.println("Manual空調金額為: "+Manual.getCost());
+		
+		Sound so = new Sound();
+		so.price = 2000;
+		System.out.println("音響金額為: "+so.getCost());
+
+	}
+
+}

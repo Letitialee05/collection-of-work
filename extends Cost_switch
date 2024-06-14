@@ -1,0 +1,94 @@
+import java.util.Scanner;
+
+class Cost1{
+	int price;
+	String name;
+	
+	public int getCost(){
+		
+		return price;	
+	}
+    
+}
+
+
+class Engine1 extends Cost1 {
+	
+	Engine1(int cc){
+    	
+		if(cc==1600) {
+			price=20000;
+		}
+		
+		else if(cc==2000) {
+			price=25000;
+		}
+	
+	}
+}
+	
+    
+
+
+class Aircond1 extends Cost1 {
+	
+	Aircond1(String name){	
+
+		if(name.equals("Auto")) {
+			price=12000;
+		}
+		
+		else if(name.equals("Manual")){
+			price=10000;
+		}
+	}
+}
+
+
+class Sound1 extends Cost1{
+	Sound1(){
+	price=2000;
+	}
+}
+
+
+public class RE_extends {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner s1=new Scanner(System.in);
+		System.out.println("輸入1查詢1600cc引擎價格,輸入2查詢2000cc引擎價格,輸入3查詢Auto空調價格,輸入4查詢Manual空調價格，輸入5查詢音響價格");
+		int c = s1.nextInt();
+		
+		switch(c) {
+		case 1:
+		Engine1 cc_1600 = new Engine1(1600);
+		System.out.println("1600cc引擎金額為: "+cc_1600.getCost());
+		break;
+		
+		case 2:
+		Engine1 cc_2000 = new Engine1(2000);
+		System.out.println("2000cc引擎金額為: "+cc_2000.getCost());
+		break;
+		
+		case 3:
+		Aircond1 Auto = new Aircond1("Auto");
+		System.out.println("Auto空調金額為: "+Auto.getCost());
+		break;
+		
+		case 4:
+		Aircond1 Manual = new Aircond1("Manual");
+		System.out.println("Manual空調金額為: "+Manual.getCost());
+		break;
+		
+		case 5:
+		Sound1 so = new Sound1();
+		System.out.println("音響金額為: "+so.getCost());
+		break;
+	}
+		s1.close();
+	}
+}
+
+

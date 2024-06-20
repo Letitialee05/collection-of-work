@@ -1,0 +1,79 @@
+package GUI;
+
+import javax.swing.*;    
+import java.awt.event.*; 
+
+public class ArthmeticRadioButtom  extends JFrame implements ActionListener{
+	JRadioButton rb1,rb2,rb3,rb4;    
+	JTextField tf1,tf2,tf3;
+	JLabel l;
+	
+	ArthmeticRadioButtom(){      
+	rb1=new JRadioButton("+");    
+	rb1.setBounds(125,50,50,20);
+	
+	rb2=new JRadioButton("-");    
+	rb2.setBounds(125,100,50,20);
+	
+	rb3=new JRadioButton("*");    
+	rb3.setBounds(125,150,50,20);
+	
+	rb4=new JRadioButton("/");    
+	rb4.setBounds(125,200,50,20);
+	
+	rb1.addActionListener(this);  
+    rb2.addActionListener(this); 
+    rb3.addActionListener(this);  
+    rb4.addActionListener(this); 
+	
+	ButtonGroup bg=new ButtonGroup();   
+	bg.add(rb1);bg.add(rb2);bg.add(rb3);bg.add(rb4);
+	
+	l=new JLabel("=");  
+    l.setBounds(300,140,100,30); 
+	
+	tf1=new JTextField();  
+    tf1.setBounds(50,140,50,30);  
+    
+    tf2=new JTextField();  
+    tf2.setBounds(200,140,50,30);
+    
+    tf3=new JTextField();  
+    tf3.setBounds(400,140,100,40);
+    tf3.setEditable(false);
+	
+	add(rb1);add(rb2);add(rb3);add(rb4);add(tf1);add(tf2);add(tf3);add(l);
+	setSize(600,600);    
+	setLayout(null);    
+	setVisible(true);    
+	}    
+	
+public void actionPerformed(ActionEvent e) {  
+    String s1=tf1.getText();  
+    String s2=tf2.getText();
+    int a=Integer.parseInt(s1); 
+    int b=Integer.parseInt(s2);  
+    int c=0;  
+    
+    if(e.getSource()==rb1){  
+        c=a+b;  
+    }else if(e.getSource()==rb2){  
+        c=a-b;  
+    }else if(e.getSource()==rb3){  
+        c=a*b;  
+    }else if(e.getSource()==rb4){  
+        c=a/b;  
+    }  
+    
+    String result=String.valueOf(c);  //再把數字轉換成文字輸出
+    tf3.setText(result);  
+}  
+
+public static void main(String[] args) {
+	// TODO Auto-generated method stub
+	new ArthmeticRadioButtom();
+	
+}
+
+}
+

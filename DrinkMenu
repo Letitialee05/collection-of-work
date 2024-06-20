@@ -1,0 +1,143 @@
+package GUI;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.*;
+
+public class DrinkMenu extends JFrame implements ActionListener {
+	
+	JLabel l;  
+    JCheckBox cb1,cb2,cb3,cb4,cb5,cb6;
+    JRadioButton rb1,rb2,rb3,rb4,rb5,rb6,rb7,rb8;
+    JButton b; 
+    
+    DrinkMenu(){  
+        l=new JLabel("Drink Ordering System");
+        l.setBounds(50,50,300,20);  
+        
+        cb1=new JCheckBox("紅茶價格 40");
+        cb1.setBounds(50,100,150,20);
+        
+        cb2=new JCheckBox("綠茶價格 40");  
+        cb2.setBounds(50,150,150,20);
+        
+        cb3=new JCheckBox("奶茶價格 60");  
+        cb3.setBounds(50,200,150,20);
+        
+        rb1=new JRadioButton("無糖");    
+    	rb1.setBounds(250,100,100,20);
+    	
+    	rb2=new JRadioButton("微糖");    
+    	rb2.setBounds(250,150,100,20);
+    	
+    	rb3=new JRadioButton("半糖");    
+    	rb3.setBounds(250,200,100,20);
+    	
+    	rb4=new JRadioButton("全糖");    
+    	rb4.setBounds(250,250,100,20);
+    	
+    	rb5=new JRadioButton("不加冰");    
+    	rb5.setBounds(400,100,100,20);
+    	
+    	rb6=new JRadioButton("微冰");    
+    	rb6.setBounds(400,150,100,20);
+    	
+    	rb7=new JRadioButton("半冰");    
+    	rb7.setBounds(400,200,100,20);
+    	
+    	rb8=new JRadioButton("全冰");    
+    	rb8.setBounds(400,250,100,20);
+    	
+    	cb4=new JCheckBox("珍珠價格 10");
+        cb4.setBounds(550,100,150,20);
+        
+        cb5=new JCheckBox("寒天價格 10");  
+        cb5.setBounds(550,150,150,20);
+        
+        cb6=new JCheckBox("椰果價格 10");  
+        cb6.setBounds(550,200,150,20);
+    	
+    	ButtonGroup bg1=new ButtonGroup();   
+    	bg1.add(rb1);bg1.add(rb2);bg1.add(rb3);bg1.add(rb4);
+    	
+    	ButtonGroup bg2=new ButtonGroup();   
+    	bg2.add(rb5);bg2.add(rb6);bg2.add(rb7);bg2.add(rb8);
+        
+        
+        b=new JButton("Order"); 
+        b.setBounds(100,450,80,30);  
+        b.addActionListener(this);  
+        
+        add(l);add(cb1);add(cb2);add(cb3);add(cb4);add(cb5);add(cb6);
+        add(rb1);add(rb2);add(rb3);add(rb4);add(rb5);add(rb6);add(rb7);add(rb8);add(b);
+        
+        setSize(800,800);  
+        setLayout(null);  
+        setVisible(true);  
+        setDefaultCloseOperation(EXIT_ON_CLOSE);  
+    }  
+	
+    public void actionPerformed(ActionEvent e){  
+        float amount=0;  
+        String msg="";  
+        
+        if(cb1.isSelected()){  
+            amount+=40;  
+            msg="紅茶: 40\n";  
+        }  
+        if(cb2.isSelected()){  
+            amount+=40;  
+            msg+="綠茶: 40\n";  
+        }  
+        if(cb3.isSelected()){  
+            amount+=60;  
+            msg+="奶茶: 60\n";  
+        } 
+        if(rb1.isSelected()){   
+            msg+="無糖\n";  
+        } 
+        if(rb2.isSelected()){   
+            msg+="微糖\n";  
+        } 
+        if(rb3.isSelected()){   
+            msg+="半糖\n";  
+        } 
+        if(rb4.isSelected()){   
+            msg+="全糖\n";  
+        } 
+        if(rb5.isSelected()){   
+            msg+="不加冰\n";  
+        } 
+        if(rb6.isSelected()){   
+            msg+="微冰\n";  
+        } 
+        if(rb7.isSelected()){   
+            msg+="半冰\n";  
+        } 
+        if(rb8.isSelected()){   
+            msg+="全冰\n";  
+        }         
+        if(cb4.isSelected()){  
+            amount+=10;  
+            msg+="珍珠: 10\n";  
+        }  
+        if(cb5.isSelected()){  
+            amount+=10;  
+            msg+="寒天: 10\n";  
+        }  if(cb6.isSelected()){  
+            amount+=10;  
+            msg+="椰果: 10\n";  
+        }  
+        
+        msg+="-----------------\n";  
+        JOptionPane.showMessageDialog(this,msg+"Total: "+amount+"");  
+    }  
+    
+    
+    
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        new DrinkMenu();
+	}
+
+}
